@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/TopImage.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled/api/detailsScreen/DetailsScreen.dart';
 import 'model/trendingMovies.dart';
 
