@@ -24,7 +24,7 @@ class _SearchTapState extends State<SearchTap> {
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,20 +36,20 @@ class _SearchTapState extends State<SearchTap> {
                   SimilarData = apiManger().getSearchMovies(value);
                 });
               },
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Color(0xff514F4F),
+                fillColor: const Color(0xff514F4F),
                 border: UnderlineInputBorder(
                   borderRadius: BorderRadius.circular(25),
                   borderSide: BorderSide.none,
                 ),
                   hintText: "eg : the dark knight",
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
                 prefixIconColor: Colors.white
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Expanded(child: FutureBuilder(future: SimilarData, builder: (context, snapshot) {
               if(snapshot.hasData){
                 return ListView.builder(itemBuilder: (context, index) {
@@ -90,7 +90,7 @@ class _SearchTapState extends State<SearchTap> {
                                         style: GoogleFonts.aBeeZee(color: Colors.white,fontSize: 14) ,
                                       ),
                                     ),
-                                    SizedBox(height: 5,),
+                                    const SizedBox(height: 5,),
                                     Container(
                                       width: 200,
                                       child: Text(
@@ -104,7 +104,7 @@ class _SearchTapState extends State<SearchTap> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                         Container(
                           width: double.infinity,
                           height: 0.5,
@@ -117,7 +117,7 @@ class _SearchTapState extends State<SearchTap> {
               }else if(snapshot.hasError){
                 return Text(snapshot.error.toString());
               }else{
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
             },))
           ],
@@ -126,44 +126,3 @@ class _SearchTapState extends State<SearchTap> {
     );
   }
 }
-///snapshot.data!.length
-// Column(
-// crossAxisAlignment: CrossAxisAlignment.start,
-// children: [
-// Container(
-// height: 200,
-// width: double.infinity,
-// decoration: BoxDecoration(
-// color: Color(0xFF282A28)
-// ),
-// child: ListView.builder(scrollDirection: Axis.vertical,itemBuilder: (context, index) {
-// trendingMovie? movies = snapshot.data?[index];
-// return Padding(
-// padding: const EdgeInsets.all(8.0),
-// child: Stack(
-// alignment: Alignment.topLeft,
-// children: [
-// GestureDetector(
-// child: Image.network(
-// filterQuality: FilterQuality.high,
-// fit: BoxFit.fill,
-// "${Constants.imageBaseUrl}${movies?.posterPath}"
-// ),
-// onTap: () {
-// Navigator.push(context, MaterialPageRoute(builder: (context) => DetailsScreen(movie: movies),));
-// },
-// ),
-// Stack(
-// alignment: Alignment.center,
-// children: [
-// Icon(Icons.bookmark,size: 30,color: Color(0xBB514F4F)),
-// Icon(Icons.add,size: 13,color: Colors.white)
-// ],
-// )
-// ],
-// ),
-// );
-// },itemCount: snapshot.data!.length,),
-// ),
-// ],
-// )

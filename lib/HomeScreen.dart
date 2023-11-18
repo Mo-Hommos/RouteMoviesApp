@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled/CategoriesTap.dart';
 import 'package:untitled/HomeTap.dart';
 import 'package:untitled/Search/SearchTap.dart';
 
@@ -14,11 +15,14 @@ class _HomeScreenState extends State<HomeScreen> {
   List<Widget> taps = [
     HomeTap(),
     SearchTap(),
+    CategoryTap()
+
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Color(0xffFFBB3B),
         onTap: (index){
           setState(() {
             iconindex = index;

@@ -4,9 +4,9 @@ import 'package:untitled/UpCommingSlider.dart';
 import 'package:untitled/api/apimanger.dart';
 import 'package:untitled/topSlider.dart';
 import 'model/trendingMovies.dart';
-class HomeTap extends StatefulWidget {
-   HomeTap({Key? key}) : super(key: key);
 
+class HomeTap extends StatefulWidget {
+   const HomeTap({Key? key}) : super(key: key);
   @override
   State<HomeTap> createState() => _HomeTapState();
 }

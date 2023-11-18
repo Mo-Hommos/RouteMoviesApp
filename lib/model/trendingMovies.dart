@@ -9,7 +9,7 @@ class trendingMovie{
   String? original_title;
   String? poster_path;
   String? release_date;
-  double voteAverage;
+  double? voteAverage;
   double? vote_average;
   int id;
   trendingMovie(
@@ -31,7 +31,7 @@ class trendingMovie{
   factory trendingMovie.fromJson(Map<String,dynamic> json){
     return trendingMovie(
         title: json["title"],
-        voteAverage: json['vote_average'],
+        voteAverage: json['vote_average'].toDouble(),
         releaseDate: json['release_date'],
         posterPath: json['poster_path'],
         overview: json['overview'],
@@ -42,7 +42,7 @@ class trendingMovie{
         original_title: json['original_title'],
         poster_path: json['poster_path'],
         release_date: json['release_date'],
-        vote_average: json['vote_average']
+        vote_average: json['vote_average'].toDouble()
     );
   }
 }
